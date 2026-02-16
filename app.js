@@ -9,7 +9,7 @@
 const tarotCards = {
     // Major Arcana (22 cards)
     major: [
-        { number: 0, name: "El Loco", image: "🃏", meaning: "Nuevos comienzo, espontaneidad, libertad, aventura, riesgo, confianza en el universo.", reversed: "Irresponsabilidad, tomar riesgos sin pensar, seguir impulse." },
+        { number: 0, name: "El Soñador", image: "🃏", meaning: "Nuevos comienzo, espontaneidad, libertad, aventura, riesgo, confianza en el universo.", reversed: "Irresponsabilidad, tomar riesgos sin pensar, seguir impulse." },
         { number: 1, name: "El Mago", image: "🧙", meaning: "Poder, habilidad, willpower, creatividad, poderío, comunicación.", reversed: "Manipulación, truco, energía mal utilizada." },
         { number: 2, name: "La Sacerdotisa", image: "👸", meaning: "Intuición, misterio, subconsciente, sabiduría interior, secretos.", reversed: "Superficialidad, secretos revelados, ignorancia." },
         { number: 3, name: "La Emperatriz", image: "👑", meaning: "Fertilidad, abundancia, naturaleza, creatividad, feminidad, материнство.", reversed: "Dependencia, esterilidad, vacío emocional." },
@@ -20,68 +20,69 @@ const tarotCards = {
         { number: 8, name: "La Fuerza", image: "🦁", meaning: "Coraje, paciencia, compasión, influencia, persuasión,温柔.", reversed: "Fragilidad, persuasión negativa, debilidad." },
         { number: 9, name: "El Ermitaño", image: "🕯️", meaning: "Introspección, sabiduría, solitude, búsqueda interior, guía.", reversed: "Aislamiento, soledad no deseada, introvertido excesivo." },
         { number: 10, name: "La Rueda de la Fortuna", image: "🎡", meaning: "Suerte, cambio, ciclos, destino, giro de eventos, oportunidades.", reversed: "Mala suerte, resistencia al cambio, inercia." },
-        { number: 11, name: "La Justicia", image: "⚖️", meaning: "Verdad, causa y efecto, ley, equilibrio, honestidad, responsabilidad.", reversed: "Injusticia, deshonestidad, evasión de responsabilidad." },
-        { number: 12, name: "El Colgado", image: "🙃", meaning: "Pausa, sacrificio, liberación, nuevo perspectiva, rendición.", reversed: "Paralización, resistencia, sacrificio inútil." },
-        { number: 13, name: "La Muerte", image: "💀", meaning: "Transformación, окончание, renacimiento, cambio profundo, tránsito.", reversed: "Miedo al cambio, estagnación, resistencia a evolucionar." },
-        { number: 14, name: "La Templanza", image: "🏺", meaning: "Equilibrio, paciencia, moderación, sanación, propósito.", reversed: "Desequilibrio, excesos, impaciencia." },
-        { number: 15, name: "El Diablo", image: "😈", meaning: "Engaño, tentación, sombras, materialismo, addición, liberarse.", reversed: "Liberación, superar sombras, reconocer patrones." },
-        { number: 16, name: "La Torre", image: "🗼", meaning: "Cambio súbito, revelación, caos, liberación forzada, despertar.", reversed: "Miedo al cambio, evitar灾难, lento despertar." },
-        { number: 17, name: "La Estrella", image: "⭐", meaning: "Esperanza, fe, renovación, inspiración, paz, guía espiritual.", reversed: "Desesperanza, duda, pérdida de fe." },
-        { number: 18, name: "La Luna", image: "🌙", meaning: "Ilusión, intuición, emociones, subconscious, sueños, misterio.", reversed: "Liberación de miedos, superar ilusiones, verdad." },
-        { number: 19, name: "El Sol", image: "☀️", meaning: "Alegría, éxito, vitalidad, claridad, verdad, abundancia.", reversed: "Tristeza temporal, claridad temporalmente perdida." },
-        { number: 20, name: "El Juicio", image: "🔔", meaning: "Renacimiento, despertar, inner calling, perdón, redención.", reversed: "Auto-duda, juicio interno, evitar el llamado." },
-        { number: 21, name: "El Mundo", image: "🌍", meaning: "Completitud, logro, recompensa, integración,新的 comienzo.", reversed: "Incompletitud, closure no alcanzado, esperar." }
+        { number: 11, name: "La Templanza", image: "🏺", meaning: "Equilibrio, paciencia, moderación, sanación, propósito, armonía.", reversed: "Desequilibrio, excesos, impaciencia, conflicto interno." },
+        { number: 12, name: "El Sol", image: "☀️", meaning: "Alegría, éxito, vitalidad, claridad, verdad, abundancia, energía positiva.", reversed: "Tristeza temporal, claridad temporalmente perdida, preocupaciones pasajeras." },
+        { number: 13, name: "La Estrella", image: "⭐", meaning: "Esperanza, fe, renovación, inspiración, paz, guía espiritual, serenidad.", reversed: "Desesperanza, duda, pérdida de fe, momentos difíciles." },
+        { number: 14, name: "La Luna", image: "🌙", meaning: "Ilusión, intuición, emociones, subconsciente, sueños, misterio.", reversed: "Liberación de miedos, superar ilusiones, verdad." },
+        { number: 15, name: "El Alba", image: "🌅", meaning: "Renacimiento diario: claridad renovada, esperanza y energía para un nuevo comienzo.", reversed: "Pausa antes del nuevo comienzo; toma tiempo para recargar." },
+        { number: 16, name: "La Torre", image: "🗼", meaning: "Cambio súbito, revelación, caos, liberación forzada, despertar.", reversed: "Miedo al cambio, evitar disaster, lento despertar." },
+        { number: 17, name: "El Despertar", image: "🌟", meaning: "Renacimiento, despertar, llamado interior, perdón, redención y transformación consciente.", reversed: "Auto-duda, juicio interno, evitar el llamado." },
+        { number: 18, name: "El Mundo", image: "🌍", meaning: "Completitud, logro, recompensa, integración, nuevo comienzo.", reversed: "Incompletitud, cierre no alcanzado, esperar." },
+        { number: 19, name: "El Viajero", image: "🧭", meaning: "Viaje, curiosidad y nuevos comienzos; abrirse a la experiencia con confianza.", reversed: "Actuar sin dirección, falta de reflexión." },
+        { number: 11, name: "Equilibrio", image: "☮️", meaning: "Equilibrio justo, claridad y resolución constructiva; resultados que restauran el orden.", reversed: "Aprendizaje de decisiones, restauración del equilibrio, verdades reveladas." },
+        { number: 12, name: "Nueva Perspectiva", image: "🔭", meaning: "Nueva perspectiva, pausa consciente y entrega que trae iluminación y crecimiento.", reversed: "Despertar, liberación, ver la situación desde otra óptica positiva." },
+        { number: 13, name: "Transformación", image: "🦋", meaning: "Transformación profunda: cierre necesario que permite renacer y comenzar de nuevo con esperanza.", reversed: "Renacimiento, liberación, cambio positivo y oportunidades renovadas." }
     ],
 
-    // Minor Arcana - Wands (Bastos)
+    // Minor Arcana - Wands (Exito)
     wands: [
-        { name: "As de Bastos", image: "🔥", meaning: "Inspiración, nuevos oportunidad, crecimiento, creatividad, pasión.", reversed: "Bloqueo creativo, retrasos, falta de motivación." },
-        { name: "Dos de Bastos", image: "💪", meaning: "Planificación, decisiones, apertura a nuevas oportunidades.", reversed: "Miedo a lo desconocido, planificación deficiente." },
-        { name: "Tres de Bastos", image: "🚢", meaning: "Esperanza, anticipación, visión de futuro, progreso.", reversed: "Obstáculos, retrasos, expectativas no cumplidas." },
-        { name: "Cuatro de Bastos", image: "🎉", meaning: "Celebración, armonía, paz, victoria, reunión familiar.", reversed: "Falta de armonía, celebración prematura." },
-        { name: "Cinco de Bastos", image: "⚔️", meaning: "Conflicto, competencia, desafíos, desacuerdo, tensión.", reversed: "Evitar conflicto, encontrar paz." },
-        { name: "Seis de Bastos", image: "🏆", meaning: "Victoria, reconocimiento, éxito, superación de desafíos.", reversed: "Arrogancia, victorexia, falta de reconocimiento." },
-        { name: "Siete de Bastos", image: "🛡️", meaning: "Defensa, persistencia, determinación, protección de logros.", reversed: "Agotamiento, rendición, abrumado." },
-        { name: "Ocho de Bastos", image: "🏹", meaning: "Rapidez, movimiento, progreso rápido, mensajes, viajes.", reversed: "Esperas, frustraciones, retrasos." },
-        { name: "Nueve de Bastos", image: "🏰", meaning: "Resistencia, perseverancia, fuerza interior, casi logrando.", reversed: "Agotamiento, rendición, pesimismo." },
-        { name: "Diez de Bastos", image: "💼", meaning: "Carga, responsabilidad, presión, trabajo pesado, deber.", reversed: "Liberación de carga, delegar, burnout." }
+        { name: "Uno de Exito", image: "🔥", meaning: "Inspiración, nuevos oportunidad, crecimiento, creatividad, pasión.", reversed: "Bloqueo creativo, retrasos, falta de motivación." },
+        { name: "Dos de Exito", image: "💪", meaning: "Planificación, decisiones, apertura a nuevas oportunidades.", reversed: "Miedo a lo desconocido, planificación deficiente." },
+        { name: "Tres de Exito", image: "🚢", meaning: "Esperanza, anticipación, visión de futuro, progreso.", reversed: "Obstáculos, retrasos, expectativas no cumplidas." },
+        { name: "Cuatro de Exito", image: "🎉", meaning: "Celebración, armonía, paz, victoria, reunión familiar.", reversed: "Falta de armonía, celebración prematura." },
+        { name: "Cinco de Exito", image: "⚔️", meaning: "Conflicto, competencia, desafíos, desacuerdo, tensión.", reversed: "Evitar conflicto, encontrar paz." },
+        { name: "Seis de Exito", image: "🏆", meaning: "Victoria, reconocimiento, éxito, superación de desafíos.", reversed: "Arrogancia, victorexia, falta de reconocimiento." },
+        { name: "Siete de Exito", image: "🛡️", meaning: "Defensa, persistencia, determinación, protección de logros.", reversed: "Agotamiento, rendición, abrumado." },
+        { name: "Ocho de Exito", image: "🏹", meaning: "Rapidez, movimiento, progreso rápido, mensajes, viajes.", reversed: "Esperas, frustraciones, retrasos." },
+        { name: "Nueve de Exito", image: "🏰", meaning: "Resistencia, perseverancia, fuerza interior, casi logrando.", reversed: "Agotamiento, rendición, pesimismo." },
+        { name: "Diez de Éxito", image: "🎯", meaning: "Culminación de esfuerzos, logros alcanzados, éxito completo, realización de metas." }
     ],
 
     // Minor Arcana - Cups (Copas)
     cups: [
-        { name: "As de Copas", image: "💧", meaning: "Amor nuevo, emociones, intuición, conexión espiritual, creatividad.", reversed: "Emociones bloqueadas, vacío emocional." },
-        { name: "Dos de Copas", image: "💑", meaning: "Asociación, relación, atracción, amor, compromiso mutuo.", reversed: "Desequilibrio, relación rota, uno dando más." },
-        { name: "Tres de Copas", image: "🥂", meaning: "Celebración, amistad, comunidad, alegría, reuniones.", reversed: "Aislamiento, exceso, soledad." },
-        { name: "Cuatro de Copas", image: "😔", meaning: "Reflexión, insatisfacción, evaluando opciones, meditación.", reversed: "Nuevas oportunidades, tomar acción." },
-        { name: "Cinco de Copas", image: "😢", meaning: "Pérdida, duelo, decepción, mirando lo negativo.", reversed: "Aceptar pérdida, perdonar, seguir adelante." },
-        { name: "Seis de Copas", image: "🧒", meaning: "Nostalgia, recuerdos, inocencia, romance, pasado.", reversed: "Vivir en el pasado, recuerdos dolorosos." },
-        { name: "Siete de Copas", image: "🎭", meaning: "Ilusión, fantasía, elecciones, sueños, confusión.", reversed: "Claridad, desilusión, tomar decisiones." },
-        { name: "Ocho de Copas", image: "🌊", meaning: "Abandono, búsqueda, dejando atrás, búsqueda de propósito.", reversed: "Miedo a التغيير, clingando al pasado." },
-        { name: "Nueve de Copas", image: "😌", meaning: "Satisfacción, realización, deseo cumplido,contentamiento.", reversed: "Insatisfacción, ambicioso sin límites." },
-        { name: "Diez de Copas", image: "👨‍👩‍👧", meaning: "Armonía familiar, felicidad, romance, comunidad, paz.", reversed: "Familia dissociada, conflictos domésticos." }
+        { name: "Uno de Cuarzo", image: "💧", meaning: "Amor nuevo, emociones, intuición, conexión espiritual, creatividad.", reversed: "Emociones bloqueadas, vacío emocional." },
+        { name: "Dos de Cuarzo", image: "💑", meaning: "Asociación, relación, atracción, amor, compromiso mutuo.", reversed: "Desequilibrio, relación rota, uno dando más." },
+        { name: "Tres de Cuarzo", image: "🥂", meaning: "Celebración, amistad, comunidad, alegría, reuniones.", reversed: "Aislamiento, exceso, soledad." },
+        { name: "Cuarto de Cuarzo", image: "🥂", meaning: "Celebración, amistad y alegría compartida; apertura a nuevas conexiones.", reversed: "Gratitud y celebración compartida; oportunidades sociales." },
+        { name: "Cinco de Cuarzo", image: "🧘", meaning: "Recuerdos afectuosos, sanación emocional y reconexión con la inocencia.", reversed: "Sanación del pasado; encuentro con apoyo y cariño." },
+        { name: "Seis de Cuarzo", image: "🍼", meaning: "Nostalgia transformadora: recuerdos que nutren y enseñan, invitando a sanar.", reversed: "Sanación activa, reconexión y gratitud." },
+        { name: "Siete de Cuarzo", image: "✨", meaning: "Ilusión, fantası́a, elecciones, sueños.", reversed: "Claridad, desiliusión, tomar decisiones." },
+        { name: "Ocho de Cuarzo", image: "🌊", meaning: "Comienzo, búsqueda, camino, búsqueda de propósito.", reversed: "Miedo a التغيير, clingando al pasado." },
+        { name: "Nueve de Cuarzo", image: "🏆", meaning: "Satisfacción, realización, deseo cumplido,contentamiento.", reversed: "Insatisfacción, ambicioso sin límites." },
+        { name: "Diez de Cuarzo", image: "👨‍👩‍👧", meaning: "Armonía familiar, felicidad, romance, comunidad, paz.", reversed: "Familia dissociada, conflictos domésticos." }
     ],
 
     // Minor Arcana - Swords (Espadas)
     swords: [
-        { name: "As de Espadas", image: "🗡️", meaning: "Verdad, claridad, nuevo idea, pensamiento claro, corte.", reversed: "Confusión, brutalidad, pensamiento oscuro." },
-        { name: "Dos de Espadas", image: "⚖️", meaning: "Decisión difícil, punto muerto, evitando problema, ceguera.", reversed: "Análisis paralysis, información nueva." },
-        { name: "Tres de Espadas", image: "💔", meaning: "Dolor, corazón roto, tristeza, grief, traición, pérdida.", reversed: "Sanación, perdonar, dejar ir dolor." },
-        { name: "Cuatro de Espadas", image: "😴", meaning: "Descanso, recuperación, meditación, pausa, serenidad.", reversed: "Inquietud, agotamiento, no poder descansar." },
-        { name: "Cinco de Espadas", image: "⚔️", meaning: "Conflicto, victoria a costa de otros, desprecio, disputa.", reversed: "Perdón, hacer las paces, dejar ir." },
-        { name: "Seis de Espadas", image: "⛵", meaning: "Transición, viaje, moving on, dejar atrás problemas.", reversed: "Atascado, resistencia al cambio." },
-        { name: "Siete de Espadas", image: "🤫", meaning: "Evasión, estrategia, secretos, steal, astucia, planificar.", reversed: "Confesar, revelar secretos, culpa." },
-        { name: "Ocho de Espadas", image: "⛓️", meaning: "Atascado, atrapado, victimización, limitaciones autoimpuestas.", reversed: "Liberación, romper cadenas, nueva perspectiva." },
-        { name: "Nueve de Espadas", image: "😰", meaning: "Ansiedad, preocupación, miedo, pesadillas, culpa, tortura mental.", reversed: "Superar miedos, esperanza, claridad." },
-        { name: "Diez de Espadas", image: "🗡️", meaning: "Final traicionero, dolor, betrayal, fin doloroso, destrucción.", reversed: "Renacimiento, recuperación, empezar de nuevo." }
+        { name: "Uno de Serenidad", image: "🔎", meaning: "Verdad, claridad, nuevo idea, pensamiento claro, corte.", reversed: "Confusión, brutalidad, pensamiento oscuro." },
+        { name: "Dos de Serenidad", image: "🤝", meaning: "Decisión con claridad y diálogo; encontrar equilibrio mediante comunicación constructiva.", reversed: "Nueva información, aceptación y resolución que permite avanzar." },
+        { name: "Tres de Serenidad", image: "🌿", meaning: "Sanación, aprendizaje; crecimiento.", reversed: "Proceso de curación activo, perdón y renovación." },
+        { name: "Cuatro de Serenidad", image: "🧘", meaning: "Descanso, recuperación, meditación, pausa, serenidad.", reversed: "Inquietud, agotamiento, no poder descansar." },
+        { name: "Cinco de Serenidad", image: "🕊️", meaning: "Amistad, victoria, aprecio, entendimiento.", reversed: "Perdón, hacer las paces, dejar ir." },
+        { name: "Seis de Serenidad", image: "⚵", meaning: "Transición, viaje, moving on, dejar atrás problemas.", reversed: "Atascado, resistencia al cambio." },
+        { name: "Siete de Serenidad", image: "🔍", meaning: "Union, estrategia, ideas, rapidez, planificar.", reversed: "Confesar, revelar secretos, culpa." },
+        { name: "Ocho de Serenidad", image: "🕊️", meaning: "Superación, libertad de pensamiento y nueva perspectiva.", reversed: "Liberación, romper cadenas, nueva perspectiva." },
+        { name: "Nueve de Serenidad", image: "🌙", meaning: "Superación: descanso, claridad y paz interior. Procesos de sanación y renovación.", reversed: "Esperanza renovada, recuperación y nueva perspectiva." },
+        { name: "Diez de Serenidad", image: "👫", meaning: "Victoria, alegria, colaboracion, comienzo, creacion.", reversed: "Renacimiento, recuperación, empezar de nuevo." }
     ],
 
     // Minor Arcana - Pentacles (Oros)
     pentacles: [
-        { name: "As de Oros", image: "💰", meaning: "Nueva oportunidad, prosperidad, abundancia, nuevo comienzo material.", reversed: "Oportunidad perdida, финансовые problemas." },
-        { name: "Dos de Oros", image: "🎭", meaning: "Equilibrio, adaptación, prioridades, múltiples responsabilidades.", reversed: "Desequilibrio, desorganización, abrumado." },
+        { name: "Uno de Oros", image: "💰", meaning: "Nueva oportunidad, prosperidad, abundancia, nuevo comienzo material.", reversed: "Oportunidad perdida, финансовые problemas." },
+        { name: "Dos de Oros", image: "🪙", meaning: "Equilibrio, adaptación, prioridades, múltiples responsabilidades.", reversed: "Desequilibrio, desorganización, abrumado." },
         { name: "Tres de Oros", image: "🏛️", meaning: "Trabajo en equipo, colaboración, maestría, artesanía.", reversed: "Falta de teamwork, trabajando solo, плохой результат." },
-        { name: "Cuatro de Oros", image: "🤑", meaning: "Conservación, seguridad, posesividad, control, stinginess.", reversed: "Generosidad, soltar control, compartir." },
-        { name: "Cinco de Oros", image: "🏠", meaning: "Dificultades financieras, pobreza, marginación, aislamiento.", reversed: "Recuperación, comunidad, ayuda disponible." },
+        { name: "Cuatro de Oros", image: "🤑", meaning: "Conservación, tranquilidad, crecimiento, compartir, amabilidad.", reversed: "Generosidad, soltar control, compartir." },
+        { name: "Cinco de Oros", image: "🏠", meaning: "Abundancia, riqueza, trabajo en equipo, inversion.", reversed: "Recuperación, comunidad, ayuda disponible." },
         { name: "Seis de Oros", image: "🤝", meaning: "Generosidad, caridad, compartir, abundancia, karma.", reversed: "Deudas, dependencia, egoísmo." },
         { name: "Siete de Oros", image: "🌱", meaning: "Paciencia, recompensa diferida, inversión, crecimiento gradual.", reversed: "Impaciencia, falta de recompensa, inversión pobre." },
         { name: "Ocho de Oros", image: "🔨", meaning: "Dedicación, maestría, habilidad, progreso, calidad.", reversed: "Falta de enfoque, habilidad no desarrollada." },
@@ -89,6 +90,61 @@ const tarotCards = {
         { name: "Diez de Oros", image: "🏰", meaning: "Herencia, riqueza familiar, tradición, éxito a largo plazo.", reversed: "Conflicto familiar, финансовые perdidas." }
     ]
 };
+
+// Sanitize tarotCards: remove `reversed` properties and replace negative words
+function sanitizeCards() {
+    const map = {
+        'dolor': 'sanación',
+        'pérdida': 'renovación',
+        'miedo': 'valor',
+        'ansiedad': 'calma',
+        'ansiedades': 'calma',
+        'conflicto': 'resolución',
+        'conflictos': 'resolución',
+        'tristeza': 'esperanza',
+        'pobreza': 'oportunidad',
+        'dificultad': 'aprendizaje',
+        'dificultades': 'aprendizaje',
+        'irresponsabilidad': 'responsabilidad',
+        'arrogancia': 'humildad',
+        'agresión': 'compasión',
+        'tiranía': 'justicia',
+        'fragilidad': 'fortaleza',
+        'aislamiento': 'conexión',
+        'mala suerte': 'oportunidad',
+        'depresión': 'apoyo',
+        'traición': 'aprendizaje',
+        'culpa': 'perdón',
+        'agotamiento': 'renovación',
+        'desesperanza': 'esperanza',
+        'soledad': 'compañía',
+        'abandono': 'apoyo',
+        'rechazo': 'aceptación',
+        'victoria a costa': 'victoria justa'
+    };
+
+    const keys = Object.keys(map);
+
+    function replaceText(s) {
+        if (!s || typeof s !== 'string') return s;
+        let out = s;
+        keys.forEach(k => {
+            out = out.replace(new RegExp('\\b' + k + '\\b', 'gi'), map[k]);
+        });
+        return out;
+    }
+
+    ['major', 'wands', 'cups', 'swords', 'pentacles'].forEach(group => {
+        if (!tarotCards[group]) return;
+        tarotCards[group].forEach(card => {
+            if (card.meaning) card.meaning = replaceText(card.meaning);
+            if (card.reversed) delete card.reversed;
+        });
+    });
+}
+
+// Run sanitization at load
+sanitizeCards();
 
 // ========================================
 // SPREAD POSITIONS
@@ -157,8 +213,17 @@ function getAllCards() {
     
     // Add Major Arcana
     tarotCards.major.forEach((card, index) => {
+        // sanitize meaning by removing common negative words/phrases
+        const negRegex = /\b(dolor|p[eé]rdida|miedo|ansiedad|ansiedades|conflicto|conflictos|tristeza|pobreza|dificultad|dificultades|irresponsabilidad|arrogancia|agresi[oó]n|tiran[ií]a|fragilidad|aislamiento|mala suerte|depresi[oó]n|traici[oó]n|victoria a costa|desesperanza|culpa|agotamiento|rendici[oó]n|desilusi[oó]n|soledad|abandono|rechazo)\b/gi;
+        let meaning = typeof card.meaning === 'string' ? card.meaning : '';
+        meaning = meaning.replace(negRegex, '').replace(/\s+,\s+/g, ', ').replace(/\s{2,}/g, ' ').replace(/(^,\s*)|(\s*,\s*$)/g, '').trim();
+
+        const cardClean = { ...card };
+        if (cardClean.hasOwnProperty('reversed')) delete cardClean.reversed;
+        cardClean.meaning = meaning || card.meaning;
+
         allCards.push({
-            ...card,
+            ...cardClean,
             type: 'major',
             typeName: 'Arcano Mayor',
             fullName: card.name
@@ -167,16 +232,24 @@ function getAllCards() {
     
     // Add Minor Arcana
     const suits = [
-        { key: 'wands', name: 'Bastos' },
-        { key: 'cups', name: 'Copas' },
-        { key: 'swords', name: 'Espadas' },
+        { key: 'wands', name: 'Exito' },
+        { key: 'cups', name: 'Cuarzo' },
+        { key: 'swords', name: 'Serenidad' },
         { key: 'pentacles', name: 'Oros' }
     ];
     
     suits.forEach(suit => {
         tarotCards[suit.key].forEach((card, index) => {
+            const negRegex = /\b(dolor|p[eé]rdida|miedo|ansiedad|ansiedades|conflicto|conflictos|tristeza|pobreza|dificultad|dificultades|irresponsabilidad|arrogancia|agresi[oó]n|tiran[ií]a|fragilidad|aislamiento|mala suerte|depresi[oó]n|traici[oó]n|victoria a costa|desesperanza|culpa|agotamiento|rendici[oó]n|desilusi[oó]n|soledad|abandono|rechazo)\b/gi;
+            let meaning = typeof card.meaning === 'string' ? card.meaning : '';
+            meaning = meaning.replace(negRegex, '').replace(/\s+,\s+/g, ', ').replace(/\s{2,}/g, ' ').replace(/(^,\s*)|(\s*,\s*$)/g, '').trim();
+
+            const cardClean = { ...card };
+            if (cardClean.hasOwnProperty('reversed')) delete cardClean.reversed;
+            cardClean.meaning = meaning || card.meaning;
+
             allCards.push({
-                ...card,
+                ...cardClean,
                 type: 'minor',
                 typeName: suit.name,
                 fullName: card.name
@@ -325,7 +398,7 @@ elements.spreadBtns.forEach(btn => {
     });
 });
 
-// Shuffle Button
+// Shuffle Button - Single Click to Shuffle & Draw
 elements.shuffleBtn.addEventListener('click', function() {
     if (!state.selectedSpread) {
         alert('Por favor selecciona una tirada primero');
@@ -336,19 +409,12 @@ elements.shuffleBtn.addEventListener('click', function() {
     state.drawnCards = shuffleArray(allCards);
     state.isShuffled = true;
     
-    elements.drawBtn.disabled = false;
-    elements.readingResult.innerHTML = '';
-});
-
-// Draw Button
-elements.drawBtn.addEventListener('click', function() {
-    if (!state.selectedSpread || !state.isShuffled) return;
-    
     const numCards = state.selectedSpread === 'three' ? 3 : 
                      state.selectedSpread === 'five' ? 5 : 10;
     
     const drawnCards = state.drawnCards.slice(0, numCards);
     
+    elements.readingResult.innerHTML = '';
     displaySpread(drawnCards);
     displayReading(drawnCards, state.selectedSpread);
     
@@ -359,8 +425,6 @@ elements.drawBtn.addEventListener('click', function() {
             card.classList.add('flipped');
         }, (index + 1) * 500);
     });
-    
-    elements.drawBtn.disabled = true;
 });
 
 // Reset Button
@@ -374,7 +438,9 @@ elements.resetBtn.addEventListener('click', function() {
     elements.spreadBtns.forEach(b => b.classList.remove('selected'));
     elements.spreadContainer.innerHTML = '';
     elements.readingResult.innerHTML = '';
-    elements.drawBtn.disabled = true;
+    
+    // Restaurar el botón de barajar al texto original
+    elements.shuffleBtn.textContent = '🃏 Barajar';
 });
 
 // Filter Buttons
@@ -393,5 +459,6 @@ elements.filterBtns.forEach(btn => {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    sanitizeCards();
     console.log('🔮 Tarot Mystic loaded successfully!');
 });
