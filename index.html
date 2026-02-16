@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Mystic - Tu Guía Espiritual</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔮 Tarot Mystic</h1>
+            <p class="subtitle">Descubre tu destino</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="draw">Tirar Cartas</button>
+            <button class="tab-btn" data-tab="cards">Todas las Cartas</button>
+            <button class="tab-btn" data-tab="about">Acerca del Tarot</button>
+        </nav>
+
+        <main>
+            <!-- Draw Section -->
+            <section id="draw" class="tab-content active">
+                <div class="spread-selector">
+                    <h2>Elige tu Tirada</h2>
+                    <div class="spread-options">
+                        <button class="spread-btn" data-spread="three">
+                            <span class="spread-icon">3</span>
+                            <span class="spread-name">3 Cartas</span>
+                            <span class="spread-desc">Pasado, Presente, Futuro</span>
+                        </button>
+                        <button class="spread-btn" data-spread="five">
+                            <span class="spread-icon">5</span>
+                            <span class="spread-name">5 Cartas</span>
+                            <span class="spread-desc">Situación Completa</span>
+                        </button>
+                        <button class="spread-btn" data-spread="celtic">
+                            <span class="spread-icon">10</span>
+                            <span class="spread-name">Cruz Celta</span>
+                            <span class="spread-desc">Análisis Profundo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="deck-area">
+                    <button id="shuffle-btn" class="action-btn">
+                        <span>🔀</span> Barajar
+                    </button>
+                    <button id="draw-btn" class="action-btn" disabled>
+                        <span>🃏</span> Escoge
+                    </button>
+                    <button id="reset-btn" class="action-btn secondary">
+                        <span>↺</span> Reiniciar
+                    </button>
+                </div>
+
+                <div id="spread-container" class="spread-container">
+                    <!-- Cards will be drawn here -->
+                </div>
+
+                <div id="reading-result" class="reading-result">
+                    <!-- Card meanings will appear here -->
+                </div>
+            </section>
+
+            <!-- All Cards Section -->
+            <section id="cards" class="tab-content">
+                <h2>Los 78 Arcanos</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="major">Arcanos Mayores</button>
+                    <button class="filter-btn" data-filter="minor">Arcanos Menores</button>
+                </div>
+                <div id="cards-grid" class="cards-grid">
+                    <!-- Cards will be displayed here -->
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="tab-content">
+                <div class="about-content">
+                    <h2>Acerca del Tarot</h2>
+                    <p>El Tarot es un conjunto de 78 cartas divididas en dos grupos: los Arcanos Mayores (22 cartas) y los Arcanos Menores (56 cartas).</p>
+                    
+                    <h3>Los Arcanos Mayores</h3>
+                    <p>Representan lecciones espirituales y eventos kármicos importantes en nuestra vida.</p>
+                    
+                    <h3>Los Arcanos Menores</h3>
+                    <p>Reflejan las situaciones cotidianas y los desafíos que enfrentamos día a día.</p>
+                    
+                    <h3>Cómo Usar Esta App</h3>
+                    <ol>
+                        <li>Elige una tirada de cartas</li>
+                        <li>Baraja las cartas haciendo clic en "Barajar"</li>
+                        <li>Haz clic en "Escoge las Cartas" para revelar tu lectura</li>
+                        <li>Lee los significados de cada carta</li>
+                    </ol>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>🔮 Que las cartas te guíen en tu camino 🔮</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
