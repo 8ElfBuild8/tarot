@@ -1,0 +1,544 @@
+/* ========================================
+   TAROT MYSTIC - Stylesheet
+   ======================================== */
+
+:root {
+    --bg-dark: #0a0a12;
+    --bg-card: #1a1a2e;
+    --bg-card-back: #16213e;
+    --primary-gold: #d4af37;
+    --primary-gold-light: #f4d03f;
+    --primary-purple: #4a0e4e;
+    --primary-purple-light: #7b2cbf;
+    --text-light: #e8e8e8;
+    --text-muted: #a0a0a0;
+    --accent-copper: #b87333;
+    /* Botones: tamaño y espaciado uniforme */
+    --btn-padding-y: 12px;
+    --btn-padding-x: 22px;
+    --btn-font-size: 1rem;
+    --btn-min-width: 150px;
+    --btn-border-radius: 10px;
+    --btn-gap: 10px;
+    /* Titulares: tamaños consistentes */
+    --h1-size: 3rem;
+    --h2-size: 1.8rem;
+    --h3-size: 1.3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', Georgia, serif;
+    background: var(--bg-dark);
+    background-image: 
+        radial-gradient(ellipse at top, #1a1a3e 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, #2d1b4e 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+    color: var(--text-light);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+header::after {
+    content: '✦';
+    display: block;
+    font-size: 24px;
+    color: var(--primary-gold);
+    margin-top: 10px;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: var(--h1-size);
+    color: var(--primary-gold);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-gold);
+    margin-bottom: 20px;
+    font-size: var(--h2-size);
+}
+
+h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-gold-light);
+    margin: 20px 0 10px;
+    font-size: var(--h3-size);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Navigation Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    font-family: 'Cinzel', serif;
+    background: transparent;
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+    padding: 12px;
+    cursor: pointer;
+    font-size: var(--btn-font-size);
+    transition: all 0.3s ease;
+    border-radius: calc(var(--btn-border-radius) - 2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--btn-gap);
+    min-width: 170px;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: var(--primary-gold);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Spread Selector */
+.spread-selector {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.spread-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.spread-btn {
+    background: var(--bg-card);
+    border: 2px solid var(--primary-purple-light);
+    color: var(--text-light);
+    padding: 15px;
+    cursor: pointer;
+    border-radius: var(--btn-border-radius);
+    transition: all 0.3s ease;
+    min-width: var(--btn-min-width);
+    width: 160px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.spread-btn:hover,
+.spread-btn.selected {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    transform: translateY(-5px);
+}
+
+.spread-icon {
+    display: block;
+    font-size: 2.5rem;
+    font-family: 'Cinzel', serif;
+    color: var(--primary-gold);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.spread-name {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.spread-desc {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Deck Area */
+.deck-area {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px 0 20px; /* más espacio para que no tapen la lectura */
+    align-items: center;
+}
+
+
+.action-btn {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+    border: none;
+    color: var(--text-light);
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    cursor: pointer;
+    font-size: var(--btn-font-size);
+    border-radius: var(--btn-border-radius);
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.action-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(123, 44, 191, 0.4);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.action-btn.secondary {
+    background: transparent;
+    border: 2px solid var(--text-muted);
+}
+
+.action-btn.secondary:hover {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+/* Spread Container */
+.spread-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 250px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Tarot Card */
+.tarot-card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.tarot-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 3px solid var(--primary-gold);
+    background-image: 
+        radial-gradient(circle at center, var(--primary-gold) 1px, transparent 1px),
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.1) 10px, rgba(212, 175, 55, 0.1) 20px);
+}
+
+.card-back::before {
+    content: '✦';
+    font-size: 3rem;
+    color: var(--primary-gold);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+.card-front {
+    background: linear-gradient(180deg, #3b0f3b 0%, #2d1b4e 100%); /* violeta oscuro */
+    transform: rotateY(180deg);
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    border: 3px solid var(--primary-gold);
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.25);
+}
+
+.card-number {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--primary-gold-light);
+    font-weight: bold;
+}
+
+/* Ocultar números de las cartas visualmente */
+.card-number {
+    display: none;
+}
+
+.card-image {
+    font-size: 4.5rem;
+    margin-bottom: 8px;
+}
+
+.card-name {
+    font-family: 'Cinzel', serif;
+    font-size: var(--h3-size);
+    color: var(--primary-gold-light);
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.card-meaning {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.card-meaning:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.meaning-label {
+    display: inline-block;
+    background: var(--primary-purple);
+    color: var(--primary-gold);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+.meaning-card-name {
+    font-family: 'Cinzel', serif;
+    font-size: var(--h2-size);
+    color: var(--primary-gold-light);
+    margin-bottom: 10px;
+}
+
+.meaning-description {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Cards Grid (All Cards View) */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+    padding: calc(var(--btn-padding-y) - 4px) calc(var(--btn-padding-x) - 8px);
+    cursor: pointer;
+    border-radius: calc(var(--btn-border-radius) * 2);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: auto;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.mini-card {
+    background: var(--bg-card);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.mini-card:hover {
+    border-color: var(--primary-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mini-card .card-image {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.mini-card .card-name {
+    font-size: 0.9rem;
+    color: var(--primary-gold-light);
+}
+
+.mini-card .card-type {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* About Section */
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background: var(--bg-card);
+    border-radius: 15px;
+    line-height: 1.8;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+.about-content ol {
+    margin-left: 20px;
+}
+
+.about-content li {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    margin-top: 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    :root {
+        --h1-size: 2rem;
+        --h2-size: 1.6rem;
+        --h3-size: 1.15rem;
+    }
+
+    .tarot-card {
+        width: 160px;
+        height: 240px;
+    }
+    
+    .card-image {
+        font-size: 4rem;
+    }
+    
+    /* .card-name seguirá usando la variable --h3-size definida arriba */
+    
+    .tabs {
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        width: 140px;
+        height: 45px;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    /* Ajuste de variables para botones en pantallas pequeñas */
+    :root {
+        --btn-padding-y: 10px;
+        --btn-padding-x: 16px;
+        --btn-font-size: 0.95rem;
+        --btn-min-width: 120px;
+        --btn-gap: 8px;
+    }
+
+    .spread-btn {
+        width: 140px;
+        height: 120px;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .spread-icon {
+        font-size: 2.2rem;
+    }
+}
