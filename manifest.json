@@ -3,7 +3,7 @@
   "name": "Mistic Tarot",
   "icons": [
     {
-      "src": "/tarot.jpeg.jfif",
+      "src": "/tarot.jpg",
       "type": "image/png",
       "sizes": "300x300"
     }
