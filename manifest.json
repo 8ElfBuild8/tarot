@@ -5,7 +5,7 @@
     {
       "src": "/tarot.jpg",
       "type": "image/png",
-      "sizes": "300x300"
+      "sizes": "500x500"
     }
   ],
   "start_url": "/index.html",
